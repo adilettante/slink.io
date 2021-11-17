@@ -1,0 +1,1354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="uvf-s7-6lg">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Aileron-Regular.otf">
+            <string>Aileron-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--HomeVC-->
+        <scene sceneID="KXs-FG-8Te">
+            <objects>
+                <viewController restorationIdentifier="HomeVC" storyboardIdentifier="HomeVC" id="tG6-Hw-oCb" customClass="HomeVC" customModule="SalesLinked" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SGG-Bc-tgM"/>
+                        <viewControllerLayoutGuide type="bottom" id="e3Z-0i-A4o"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="q6F-JY-er6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="JdO-ho-TKe">
+                                <rect key="frame" x="0.0" y="8" width="375" height="659"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="fAz-Gl-wOM" customClass="HomeVCLayout" customModule="SalesLinked" customModuleProvider="target">
+                                    <size key="itemSize" width="119" height="119"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="5" minY="5" maxX="5" maxY="5"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HomeCell" id="AZe-C0-CVb" customClass="HomeCell" customModule="SalesLinked" customModuleProvider="target">
+                                        <rect key="frame" x="5" y="5" width="119" height="119"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="119" height="119"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" semanticContentAttribute="playback" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="j6k-J5-qN7">
+                                                    <rect key="frame" x="0.0" y="0.0" width="119" height="119"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="j6k-J5-qN7" secondAttribute="bottom" id="MeS-Pe-BQt"/>
+                                            <constraint firstItem="j6k-J5-qN7" firstAttribute="top" secondItem="AZe-C0-CVb" secondAttribute="top" id="ib3-cl-4jz"/>
+                                            <constraint firstAttribute="trailing" secondItem="j6k-J5-qN7" secondAttribute="trailing" id="pla-QZ-xOz"/>
+                                            <constraint firstItem="j6k-J5-qN7" firstAttribute="leading" secondItem="AZe-C0-CVb" secondAttribute="leading" id="uqC-WN-fLI"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="selectedImage" destination="j6k-J5-qN7" id="Zvq-UM-hr9"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="JdO-ho-TKe" firstAttribute="top" secondItem="q6F-JY-er6" secondAttribute="top" constant="8" id="2jk-Bf-Tkn"/>
+                            <constraint firstItem="JdO-ho-TKe" firstAttribute="leading" secondItem="q6F-JY-er6" secondAttribute="leading" id="Hlr-0x-1Sh"/>
+                            <constraint firstAttribute="trailing" secondItem="JdO-ho-TKe" secondAttribute="trailing" id="YkE-3c-V84"/>
+                            <constraint firstAttribute="bottom" secondItem="JdO-ho-TKe" secondAttribute="bottom" id="sxf-49-Vmt"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="zSq-11-oAh">
+                        <barButtonItem key="backBarButtonItem" title=" " id="0n0-4p-Kkk"/>
+                        <barButtonItem key="leftBarButtonItem" image="ic_star" id="Aar-pJ-OHr">
+                            <color key="tintColor" red="0.40351307390000002" green="0.40011233089999998" blue="0.38306465740000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="Yy3-WD-dba" kind="show" id="bkw-do-zLm"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="ic_settings" id="tV4-eD-vnD">
+                            <color key="tintColor" red="0.40351307390000002" green="0.40011233089999998" blue="0.38306465740000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="homeCollectionView" destination="JdO-ho-TKe" id="4nP-D3-33W"/>
+                        <outlet property="settingsButton" destination="tV4-eD-vnD" id="kbM-BL-hZh"/>
+                        <segue destination="FvF-YP-uYQ" kind="show" identifier="openSettingsSegue" id="Q0d-MZ-ipv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a2P-qk-vgO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2194.4000000000001" y="-246.9265367316342"/>
+        </scene>
+        <!--Photo-->
+        <scene sceneID="HxV-Yk-ykr">
+            <objects>
+                <viewController id="gMr-J1-QjC" customClass="PageViewController" customModule="SalesLinked" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7O1-sh-nj2"/>
+                        <viewControllerLayoutGuide type="bottom" id="g9m-Bs-Dsq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Hrl-hU-IXj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nU6-lr-5e0" customClass="GradientView" customModule="SalesLinked" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="nU6-lr-5e0" secondAttribute="trailing" id="A1g-TF-CwM"/>
+                            <constraint firstItem="nU6-lr-5e0" firstAttribute="top" secondItem="Hrl-hU-IXj" secondAttribute="top" id="bWf-PY-W6o"/>
+                            <constraint firstItem="nU6-lr-5e0" firstAttribute="leading" secondItem="Hrl-hU-IXj" secondAttribute="leading" id="ndJ-oL-ecg"/>
+                            <constraint firstAttribute="bottom" secondItem="nU6-lr-5e0" secondAttribute="bottom" id="q7n-GA-2qO"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Photo" id="xE3-eG-RXv">
+                        <barButtonItem key="backBarButtonItem" title=" " id="haB-iQ-rHp"/>
+                        <barButtonItem key="rightBarButtonItem" image="ic_settings" id="E9u-N8-vqU">
+                            <color key="tintColor" red="0.40351307390000002" green="0.40011233089999998" blue="0.38306465740000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="FvF-YP-uYQ" kind="show" id="zOp-B0-PxI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="gradientView" destination="nU6-lr-5e0" id="JPa-f2-P85"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0RK-Jv-XCm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3479" y="-247"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="14b-EG-0Gk">
+            <objects>
+                <viewController title="Settings" id="FvF-YP-uYQ" customClass="SettingsViewController" customModule="SalesLinked" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6FQ-Jt-zvU"/>
+                        <viewControllerLayoutGuide type="bottom" id="xMD-OW-oPB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JZK-CD-4OD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rui-0q-41B">
+                                <rect key="frame" x="0.0" y="6" width="375" height="612"/>
+                                <color key="backgroundColor" red="0.1450980392" green="0.14901960780000001" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" red="0.1450980392" green="0.14901960780000001" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="settingsSignOut" rowHeight="49" id="mSu-kv-fS5">
+                                        <rect key="frame" x="0.0" y="44.5" width="375" height="49"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mSu-kv-fS5" id="vsP-WD-MzF">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YRY-VU-fkq">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_sign_out" translatesAutoresizingMaskIntoConstraints="NO" id="obO-0O-XCG">
+                                                            <rect key="frame" x="26" y="10.5" width="28" height="28"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="28" id="WYg-6p-Y66"/>
+                                                                <constraint firstAttribute="height" constant="28" id="zBe-jX-ano"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Out" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3wx-JJ-yvH">
+                                                            <rect key="frame" x="59" y="14.5" width="66.5" height="20"/>
+                                                            <fontDescription key="fontDescription" name="Aileron-Regular" family="Aileron" pointSize="17"/>
+                                                            <color key="textColor" red="0.58002853393554688" green="0.57657307386398315" blue="0.56374186277389526" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.1450980392" green="0.14901960780000001" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstItem="3wx-JJ-yvH" firstAttribute="leading" secondItem="obO-0O-XCG" secondAttribute="trailing" constant="5" id="5lT-BW-Imq"/>
+                                                        <constraint firstItem="obO-0O-XCG" firstAttribute="centerY" secondItem="YRY-VU-fkq" secondAttribute="centerY" id="6ej-hv-ehr"/>
+                                                        <constraint firstItem="3wx-JJ-yvH" firstAttribute="centerY" secondItem="YRY-VU-fkq" secondAttribute="centerY" id="NSj-9f-tE5"/>
+                                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="3wx-JJ-yvH" secondAttribute="trailing" constant="20" symbolic="YES" id="a30-X1-V80"/>
+                                                        <constraint firstItem="obO-0O-XCG" firstAttribute="leading" secondItem="YRY-VU-fkq" secondAttribute="leading" constant="26" id="pad-x1-2qP"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="YRY-VU-fkq" secondAttribute="bottom" id="N6v-ZF-lg8"/>
+                                                <constraint firstAttribute="trailing" secondItem="YRY-VU-fkq" secondAttribute="trailing" id="dRF-Bj-iOW"/>
+                                                <constraint firstItem="YRY-VU-fkq" firstAttribute="top" secondItem="vsP-WD-MzF" secondAttribute="top" id="sOk-Sq-Di4"/>
+                                                <constraint firstItem="YRY-VU-fkq" firstAttribute="leading" secondItem="vsP-WD-MzF" secondAttribute="leading" id="uh1-Du-f5j"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="settingsExport" rowHeight="49" id="qsI-dM-9xB">
+                                        <rect key="frame" x="0.0" y="93.5" width="375" height="49"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qsI-dM-9xB" id="vIT-wc-H3R">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IVg-Sz-bY0">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_export" translatesAutoresizingMaskIntoConstraints="NO" id="HQV-lr-Wes">
+                                                            <rect key="frame" x="26" y="18" width="21" height="22"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="21" id="UAG-gB-XYw"/>
+                                                                <constraint firstAttribute="height" constant="22" id="YRB-Ae-EQm"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Export Contacts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fCl-Km-wpz">
+                                                            <rect key="frame" x="59" y="19" width="122" height="20"/>
+                                                            <fontDescription key="fontDescription" name="Aileron-Regular" family="Aileron" pointSize="17"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.14509803921568626" green="0.14901960784313725" blue="0.12549019607843137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstItem="fCl-Km-wpz" firstAttribute="centerY" secondItem="IVg-Sz-bY0" secondAttribute="centerY" constant="5" id="1cL-5i-cwK"/>
+                                                        <constraint firstItem="HQV-lr-Wes" firstAttribute="leading" secondItem="IVg-Sz-bY0" secondAttribute="leading" constant="26" id="1cy-CI-bAk"/>
+                                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="fCl-Km-wpz" secondAttribute="trailing" constant="20" symbolic="YES" id="Fuv-0x-k4N"/>
+                                                        <constraint firstItem="HQV-lr-Wes" firstAttribute="centerY" secondItem="IVg-Sz-bY0" secondAttribute="centerY" constant="5" id="TtI-cu-RDb"/>
+                                                        <constraint firstAttribute="height" constant="48" id="lZ9-mz-Xy0"/>
+                                                        <constraint firstItem="fCl-Km-wpz" firstAttribute="leading" secondItem="HQV-lr-Wes" secondAttribute="trailing" constant="12" id="qXJ-e2-gyd"/>
+                                                    </constraints>
+                                                </view>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="cIY-Db-XhU">
+                                                    <rect key="frame" x="346" y="21.5" width="14" height="15"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="14" id="90b-4z-f65"/>
+                                                        <constraint firstAttribute="height" constant="15" id="A3D-hL-cEf"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="IVg-Sz-bY0" secondAttribute="trailing" id="1bR-Gg-aUw"/>
+                                                <constraint firstItem="cIY-Db-XhU" firstAttribute="centerY" secondItem="IVg-Sz-bY0" secondAttribute="centerY" constant="5" id="IlD-Ie-bV3"/>
+                                                <constraint firstAttribute="trailing" secondItem="cIY-Db-XhU" secondAttribute="trailing" constant="15" id="NMk-VP-nyw"/>
+                                                <constraint firstItem="IVg-Sz-bY0" firstAttribute="top" secondItem="vIT-wc-H3R" secondAttribute="top" id="tCM-LE-S8i"/>
+                                                <constraint firstAttribute="bottom" secondItem="IVg-Sz-bY0" secondAttribute="bottom" constant="1" id="tPh-XA-h2o"/>
+                                                <constraint firstItem="IVg-Sz-bY0" firstAttribute="leading" secondItem="vIT-wc-H3R" secondAttribute="leading" id="yrZ-cf-J9P"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="settingsStandard" rowHeight="49" id="TIR-8h-zRK" customClass="SettingsStandardTableViewCell" customModule="SalesLinked" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="142.5" width="375" height="49"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TIR-8h-zRK" id="nL3-q9-qE2">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HT3-hw-OVy">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6na-QB-pbw">
+                                                            <rect key="frame" x="16" y="14" width="43" height="20"/>
+                                                            <fontDescription key="fontDescription" name="Aileron-Regular" family="Aileron" pointSize="17"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="N4P-tt-bW7">
+                                                            <rect key="frame" x="346" y="16.5" width="14" height="15"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="15" id="CVr-Qv-WKX"/>
+                                                                <constraint firstAttribute="width" constant="14" id="HGI-km-2kV"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.14509803921568626" green="0.14901960784313725" blue="0.12549019607843137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="N4P-tt-bW7" secondAttribute="trailing" constant="15" id="Ech-2q-DqW"/>
+                                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6na-QB-pbw" secondAttribute="trailing" constant="20" symbolic="YES" id="aeS-vr-Pgl"/>
+                                                        <constraint firstItem="N4P-tt-bW7" firstAttribute="centerY" secondItem="HT3-hw-OVy" secondAttribute="centerY" id="i6j-wD-E7n"/>
+                                                        <constraint firstAttribute="height" constant="47.5" id="muY-tz-js9"/>
+                                                        <constraint firstItem="6na-QB-pbw" firstAttribute="centerY" secondItem="HT3-hw-OVy" secondAttribute="centerY" id="rC2-0I-103"/>
+                                                        <constraint firstItem="6na-QB-pbw" firstAttribute="leading" secondItem="HT3-hw-OVy" secondAttribute="leading" constant="16" id="tMQ-lr-nKo"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="HT3-hw-OVy" firstAttribute="top" secondItem="nL3-q9-qE2" secondAttribute="top" id="0Tf-tj-uOo"/>
+                                                <constraint firstAttribute="trailing" secondItem="HT3-hw-OVy" secondAttribute="trailing" id="FWD-oh-IeW"/>
+                                                <constraint firstAttribute="bottom" secondItem="HT3-hw-OVy" secondAttribute="bottom" constant="1" id="baP-F8-7cz"/>
+                                                <constraint firstItem="HT3-hw-OVy" firstAttribute="leading" secondItem="nL3-q9-qE2" secondAttribute="leading" id="wXY-mH-e35"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="cellHeight" destination="muY-tz-js9" id="IYI-Dx-KIh"/>
+                                            <outlet property="cellMargin" destination="baP-F8-7cz" id="blK-28-5ov"/>
+                                            <outlet property="label" destination="6na-QB-pbw" id="oQw-wX-csR"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="settingsAccount" rowHeight="49" id="1eK-Qg-lgH">
+                                        <rect key="frame" x="0.0" y="191.5" width="375" height="49"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1eK-Qg-lgH" id="DNS-4F-oHX">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xt5-DX-MbT">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
+                                                    <color key="backgroundColor" red="0.1450980392" green="0.14901960780000001" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="48" id="Qxm-uW-cef"/>
+                                                    </constraints>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ACCOUNT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KrC-0Y-1t1">
+                                                    <rect key="frame" x="16" y="25" width="62.5" height="16"/>
+                                                    <fontDescription key="fontDescription" name="Aileron-Regular" family="Aileron" pointSize="13"/>
+                                                    <color key="textColor" red="0.58002853389999998" green="0.57657307390000001" blue="0.56374186280000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="KrC-0Y-1t1" secondAttribute="bottom" constant="8" id="4Oc-Ve-3yg"/>
+                                                <constraint firstAttribute="bottom" secondItem="Xt5-DX-MbT" secondAttribute="bottom" constant="1" id="KbS-lW-mQI"/>
+                                                <constraint firstItem="KrC-0Y-1t1" firstAttribute="leading" secondItem="DNS-4F-oHX" secondAttribute="leading" constant="16" id="Y04-wG-TCM"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="KrC-0Y-1t1" secondAttribute="trailing" constant="20" symbolic="YES" id="hoO-00-WKK"/>
+                                                <constraint firstAttribute="trailing" secondItem="Xt5-DX-MbT" secondAttribute="trailing" id="viH-aG-wiz"/>
+                                                <constraint firstItem="Xt5-DX-MbT" firstAttribute="leading" secondItem="DNS-4F-oHX" secondAttribute="leading" id="xzK-L0-0Ne"/>
+                                                <constraint firstItem="Xt5-DX-MbT" firstAttribute="top" secondItem="DNS-4F-oHX" secondAttribute="top" id="yQN-f5-ve0"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="settingsNotification" rowHeight="49" id="g1d-tm-WRP">
+                                        <rect key="frame" x="0.0" y="240.5" width="375" height="49"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="g1d-tm-WRP" id="Rub-0D-1R9">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2gO-nI-SfM">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
+                                                    <color key="backgroundColor" red="0.1450980392" green="0.14901960780000001" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="48" id="tcD-LT-z5v"/>
+                                                    </constraints>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nrt-f3-Suv">
+                                                    <rect key="frame" x="16" y="14" width="96" height="20"/>
+                                                    <fontDescription key="fontDescription" name="Aileron-Regular" family="Aileron" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="R8T-hl-LzW">
+                                                    <rect key="frame" x="311" y="8.5" width="51" height="31"/>
+                                                    <color key="onTintColor" red="0.58002853389999998" green="0.57657307390000001" blue="0.56374186280000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="2gO-nI-SfM" firstAttribute="top" secondItem="Rub-0D-1R9" secondAttribute="top" id="3Qi-xU-EEb"/>
+                                                <constraint firstAttribute="trailing" secondItem="R8T-hl-LzW" secondAttribute="trailing" constant="15" id="Bex-Zq-Qcw"/>
+                                                <constraint firstItem="nrt-f3-Suv" firstAttribute="leading" secondItem="Rub-0D-1R9" secondAttribute="leading" constant="16" id="O0Z-5F-Tji"/>
+                                                <constraint firstItem="nrt-f3-Suv" firstAttribute="centerY" secondItem="2gO-nI-SfM" secondAttribute="centerY" id="PsN-z1-8uB"/>
+                                                <constraint firstItem="2gO-nI-SfM" firstAttribute="leading" secondItem="Rub-0D-1R9" secondAttribute="leading" id="UlQ-Q8-57E"/>
+                                                <constraint firstAttribute="bottom" secondItem="2gO-nI-SfM" secondAttribute="bottom" constant="1" id="aXf-7o-jUu"/>
+                                                <constraint firstAttribute="trailing" secondItem="2gO-nI-SfM" secondAttribute="trailing" id="nle-KV-omU"/>
+                                                <constraint firstItem="R8T-hl-LzW" firstAttribute="centerY" secondItem="2gO-nI-SfM" secondAttribute="centerY" id="rGz-RP-c1H"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="nrt-f3-Suv" secondAttribute="trailing" constant="20" symbolic="YES" id="sAt-QI-S5C"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="FvF-YP-uYQ" id="dYn-8z-iGR"/>
+                                    <outlet property="delegate" destination="FvF-YP-uYQ" id="ZNQ-tt-MSw"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xMD-OW-oPB" firstAttribute="top" secondItem="rui-0q-41B" secondAttribute="bottom" id="E4a-SS-cKr"/>
+                            <constraint firstAttribute="trailing" secondItem="rui-0q-41B" secondAttribute="trailing" id="boz-NF-oSt"/>
+                            <constraint firstItem="rui-0q-41B" firstAttribute="leading" secondItem="JZK-CD-4OD" secondAttribute="leading" id="pmi-hP-1DU"/>
+                            <constraint firstItem="rui-0q-41B" firstAttribute="top" secondItem="JZK-CD-4OD" secondAttribute="top" constant="6" id="vOg-ns-LtP"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableVIew" destination="rui-0q-41B" id="Vl8-Fq-3rJ"/>
+                        <segue destination="s9a-zc-bZ3" kind="show" identifier="toTerms" id="50q-6Q-PXj"/>
+                        <segue destination="uvf-s7-6lg" kind="show" identifier="toHome" id="OF3-yD-GDK"/>
+                        <segue destination="Yy3-WD-dba" kind="show" identifier="toCommingSoon" id="wor-PC-vnG"/>
+                        <segue destination="By5-Im-tHV" kind="show" identifier="toPolicy" id="4Ed-eb-vyu"/>
+                        <segue destination="VaS-Z0-AKH" kind="show" identifier="toDeleteContacts" id="QKj-al-UQg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vdu-2v-Ypo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2623" y="612"/>
+        </scene>
+        <!--Terms Of Use-->
+        <scene sceneID="fBz-G0-4IL">
+            <objects>
+                <viewController title="Terms Of Use" id="s9a-zc-bZ3" customClass="TermsViewController" customModule="SalesLinked" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YrI-id-cc5"/>
+                        <viewControllerLayoutGuide type="bottom" id="llW-pI-XCy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Kq2-g0-kNI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gbu-Ql-KdE">
+                                <rect key="frame" x="15" y="15" width="345" height="637"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Terms and Conditions">
+                                        <attributes>
+                                            <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="NSColor" red="0.30980392156862746" green="0.50196078431372548" blue="0.74117647058823533" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" metaFont="system" size="16"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+
+Last updated: October 16, 2017
+Please read these Terms and Conditions ("Terms", "Terms and Conditions") carefully before using the SalesLinked mobile application (the "Service") operated by SalesLinked ("us", "we", or "our").
+
+Your access to and use of the Service is conditioned upon your acceptance of and compliance with these Terms. These Terms apply to all visitors, users and others who wish to access or use the Service.
+
+By accessing or using the Service you agree to be bound by these Terms. If you disagree with any part of the terms then you do not have permission to access the Service.
+
+</string>
+                                        <attributes>
+                                            <font key="NSFont" metaFont="menu" size="14"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Communications">
+                                        <attributes>
+                                            <color key="NSColor" red="0.30980392156862746" green="0.50196078431372548" blue="0.74117647058823533" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" metaFont="system" size="16"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+
+By creating an Account on our service, you agree to subscribe to newsletters, marketing or promotional materials and other information we may send.
+ 
+However, you may opt out of receiving any, or all, of these communications from us by following the unsubscribe link or instructions provided in any email we send.
+
+</string>
+                                        <attributes>
+                                            <font key="NSFont" metaFont="menu" size="14"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Subscriptions">
+                                        <attributes>
+                                            <color key="NSColor" red="0.30980392156862746" green="0.50196078431372548" blue="0.74117647058823533" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" metaFont="system" size="16"/>
+                                            <font key="NSOriginalFont" metaFont="system" size="16"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+
+Some parts of the Service are billed on a subscription basis ("Subscription(s)"). You will be billed in advance on a recurring and periodic basis ("Billing Cycle"). Billing cycles are set either on a monthly or annual basis, depending on the type of subscription plan you select when purchasing a Subscription.
+At the end of each Billing Cycle, your Subscription will automatically renew under the exact same conditions unless you cancel it or SalesLinked cancels it. You may cancel your Subscription renewal either through your online account management page or by contacting SalesLinked customer support team.
+
+A valid payment method, including credit card, is required to process the payment for your Subscription. You shall provide SalesLinked with accurate and complete billing information including full name, address, state, zip code, telephone number, and a valid payment method information. By submitting such payment information, you automatically authorize SalesLinked to charge all Subscription fees incurred through your account to any such payment instruments.
+
+Should automatic billing fail to occur for any reason, SalesLinked will issue an electronic invoice indicating that you must proceed manually, within a certain deadline date, with the full payment corresponding to the billing period as indicated on the invoice.
+
+</string>
+                                        <attributes>
+                                            <font key="NSFont" metaFont="menu" size="14"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Fee Changes">
+                                        <attributes>
+                                            <color key="NSColor" red="0.30980392156862746" green="0.50196078431372548" blue="0.74117647058823533" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" metaFont="system" size="16"/>
+                                            <font key="NSOriginalFont" metaFont="system" size="16"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+
+SalesLinked, in its sole discretion and at any time, may modify the Subscription fees for the Subscriptions. Any Subscription fee change will become effective at the end of the then-current Billing Cycle.
+
+SalesLinked will provide you with a reasonable prior notice of any change in Subscription fees to give you an opportunity to terminate your Subscription before such change becomes effective.
+
+Your continued use of the Service after the Subscription fee change comes into effect constitutes your agreement to pay the modified Subscription fee amount.
+
+</string>
+                                        <attributes>
+                                            <font key="NSFont" metaFont="menu" size="14"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Refunds">
+                                        <attributes>
+                                            <color key="NSColor" red="0.30980392156862746" green="0.50196078431372548" blue="0.74117647058823533" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" metaFont="system" size="16"/>
+                                            <font key="NSOriginalFont" metaFont="system" size="16"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+
+Except when required by law, paid Subscription fees are non-refundable.
+
+</string>
+                                        <attributes>
+                                            <font key="NSFont" metaFont="menu" size="14"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Content">
+                                        <attributes>
+                                            <color key="NSColor" red="0.30980392156862746" green="0.50196078431372548" blue="0.74117647058823533" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" metaFont="system" size="16"/>
+                                            <font key="NSOriginalFont" metaFont="system" size="16"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+
+Our Service allows you to post, link, store, share and otherwise make available certain information, text, graphics, videos, or other material ("Content"). You are responsible for the Content that you post on or through the Service, including its legality, reliability, and appropriateness.
+
+By posting Content on or through the Service, You represent and warrant that: (i) the Content is yours (you own it) and/or you have the right to use it and the right to grant us the rights and license as provided in these Terms, and (ii) that the posting of your Content on or through the Service does not violate the privacy rights, publicity rights, copyrights, contract rights or any other rights of any person or entity.
+ 
+We reserve the right to terminate the account of anyone found to be infringing on a copyright.
+
+You retain any and all of your rights to any Content you submit, post or display on or through the Service and you are responsible for protecting those rights. We take no responsibility and assume no liability for Content you or any third party posts on or through the Service. 
+
+However, by posting Content using the Service you grant us the right and license to use, modify, perform, display, reproduce, and distribute such Content on and through the Service.
+
+SalesLinked has the right but not the obligation to monitor and edit all Content provided by users.
+
+In addition, Content found on or through this Service are the property of SalesLinked or used with permission. You may not distribute, modify, transmit, reuse, download, repost, copy, or use said Content, whether in whole or in part, for commercial purposes or for personal gain, without express advance written permission from us.
+
+</string>
+                                        <attributes>
+                                            <font key="NSFont" metaFont="menu" size="14"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Accounts">
+                                        <attributes>
+                                            <color key="NSColor" red="0.30980392156862746" green="0.50196078431372548" blue="0.74117647058823533" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" metaFont="system" size="16"/>
+                                            <font key="NSOriginalFont" metaFont="system" size="16"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+
+When you create an account with us, you guarantee that you are above the age of 18, and that the information you provide us is accurate, complete, and current at all times. Inaccurate, incomplete, or obsolete information may result in the immediate termination of your account on the Service.
+
+You are responsible for maintaining the confidentiality of your account and password, including but not limited to the restriction of access to your computer and/or account. You agree to accept responsibility for any and all activities or actions that occur under your account and/or password, whether your password is with our Service or a third-party service. You must notify us immediately upon becoming aware of any breach of security or unauthorized use of your account.
+
+</string>
+                                        <attributes>
+                                            <font key="NSFont" metaFont="menu" size="14"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Intellectual Property">
+                                        <attributes>
+                                            <color key="NSColor" red="0.30980392156862746" green="0.50196078431372548" blue="0.74117647058823533" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" metaFont="system" size="16"/>
+                                            <font key="NSOriginalFont" metaFont="system" size="16"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+
+The Service and its original content (excluding Content provided by users), features and functionality are and will remain the exclusive property of SalesLinked and its licensors. 
+
+The Service is protected by copyright, trademark, and other laws of both the United States and foreign countries. Our trademarks and trade dress may not be used in connection with any product or service without the prior written consent of SalesLinked.
+
+</string>
+                                        <attributes>
+                                            <font key="NSFont" metaFont="menu" size="14"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Links To Other Web Sites">
+                                        <attributes>
+                                            <color key="NSColor" red="0.30980392156862746" green="0.50196078431372548" blue="0.74117647058823533" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" metaFont="system" size="16"/>
+                                            <font key="NSOriginalFont" metaFont="system" size="16"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+
+Our Service may contain links to third party web sites or services that are not owned or controlled by SalesLinked
+SalesLinked has no control over, and assumes no responsibility for the content, privacy policies, or practices of any third party web sites or services. We do not warrant the offerings of any of these entities/individuals or their websites.
+
+You acknowledge and agree that SalesLinked shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with use of or reliance on any such content, goods or services available on or through any such third party web sites or services.
+We strongly advise you to read the terms and conditions and privacy policies of any third party web sites or services that you visit.
+
+</string>
+                                        <attributes>
+                                            <font key="NSFont" metaFont="menu" size="14"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Termination">
+                                        <attributes>
+                                            <color key="NSColor" red="0.30980392156862746" green="0.50196078431372548" blue="0.74117647058823533" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" metaFont="system" size="16"/>
+                                            <font key="NSOriginalFont" metaFont="system" size="16"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+
+We may terminate or suspend your account and bar access to the Service immediately, without prior notice or liability, under our sole discretion, for any reason whatsoever and without limitation, including but not limited to a breach of the Terms.
+If you wish to terminate your account, you may simply discontinue using the Service.
+
+All provisions of the Terms which by their nature should survive termination shall survive termination, including, without limitation, ownership provisions, warranty disclaimers, indemnity and limitations of liability.
+
+</string>
+                                        <attributes>
+                                            <font key="NSFont" metaFont="menu" size="14"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Governing Law">
+                                        <attributes>
+                                            <color key="NSColor" red="0.30980392156862746" green="0.50196078431372548" blue="0.74117647058823533" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" metaFont="system" size="16"/>
+                                            <font key="NSOriginalFont" metaFont="system" size="16"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+
+These Terms shall be governed and construed in accordance with the laws of California, United States, without regard to its conflict of law provisions.
+Our failure to enforce any right or provision of these Terms will not be considered a waiver of those rights. If any provision of these Terms is held to be invalid or unenforceable by a court, the remaining provisions of these Terms will remain in effect. 
+
+These Terms constitute the entire agreement between us regarding our Service, and supersede and replace any prior agreements we might have had between us regarding the Service.
+
+</string>
+                                        <attributes>
+                                            <font key="NSFont" metaFont="menu" size="14"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Changes">
+                                        <attributes>
+                                            <color key="NSColor" red="0.30980392156862746" green="0.50196078431372548" blue="0.74117647058823533" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" metaFont="system" size="16"/>
+                                            <font key="NSOriginalFont" metaFont="system" size="16"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+
+We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material we will provide at least 30 days notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.
+
+By continuing to access or use our Service after any revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, you are no longer authorized to use the Service.
+
+</string>
+                                        <attributes>
+                                            <font key="NSFont" metaFont="menu" size="14"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Contact Us">
+                                        <attributes>
+                                            <color key="NSColor" red="0.30980392156862746" green="0.50196078431372548" blue="0.74117647058823533" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" metaFont="system" size="16"/>
+                                            <font key="NSOriginalFont" metaFont="system" size="16"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+
+If you have any questions about these Terms, please contact us.
+</string>
+                                        <attributes>
+                                            <font key="NSFont" metaFont="menu" size="14"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gbu-Ql-KdE" firstAttribute="leading" secondItem="Kq2-g0-kNI" secondAttribute="leading" constant="15" id="47e-fe-myv"/>
+                            <constraint firstItem="gbu-Ql-KdE" firstAttribute="top" secondItem="Kq2-g0-kNI" secondAttribute="top" constant="15" id="5Du-0g-ihu"/>
+                            <constraint firstAttribute="trailing" secondItem="gbu-Ql-KdE" secondAttribute="trailing" constant="15" id="BcJ-39-dGQ"/>
+                            <constraint firstAttribute="bottom" secondItem="gbu-Ql-KdE" secondAttribute="bottom" constant="15" id="tET-AS-RUH"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="termsTextPlain" destination="gbu-Ql-KdE" id="3w5-65-ixx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6sw-Us-XRN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3334" y="611"/>
+        </scene>
+        <!--Privacy Policy-->
+        <scene sceneID="b8G-ML-wGK">
+            <objects>
+                <viewController title="Privacy Policy" id="By5-Im-tHV" customClass="PolicyViewController" customModule="SalesLinked" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="INf-vx-bDg"/>
+                        <viewControllerLayoutGuide type="bottom" id="H1H-FE-ptH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7SM-kD-S50">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dXl-m5-6qS">
+                                <rect key="frame" x="15" y="15" width="345" height="637"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Privacy Policy">
+                                        <attributes>
+                                            <color key="NSColor" red="0.30980392156862746" green="0.50196078431372548" blue="0.74117647058823533" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="16" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="18" paragraphSpacingBefore="18" minimumLineHeight="36" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.30980392156862746" green="0.50196078431372548" blue="0.74117647058823533" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="34" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="18" paragraphSpacingBefore="18" minimumLineHeight="36" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">Joseph Hazani built the SalesLinked app as a Freemium app. This SERVICE is provided by Joseph Hazani at no cost and is intended for use as is.
+This page is used to inform website visitors regarding my policies with the collection, use, and disclosure of Personal Information if anyone decided to use my Service.
+If you choose to use my Service, then you agree to the collection and use of information in relation to this policy. The Personal Information that I collect is used for providing and improving the Service. I will not use or share your information with anyone except as described in this Privacy Policy.
+The terms used in this Privacy Policy have the same meanings as in our Terms and Conditions, which is accessible at SalesLinked unless otherwise defined in this Privacy Policy.
+</string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="14" name="Helvetica"/>
+                                            <font key="NSOriginalFont" size="14" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="12" lineHeightMultiple="1.5" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Information Collection and Use">
+                                        <attributes>
+                                            <color key="NSColor" red="0.30980392156862746" green="0.50196078431372548" blue="0.74117647058823533" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="16" name="Helvetica"/>
+                                            <font key="NSOriginalFont" size="16" name="Helvetica-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="12" lineHeightMultiple="1.5" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+For a better experience, while using our Service, I may require you to provide us with certain personally identifiable information, including but not limited to Email Address, First Name, Last Name, Company, Telephone Number. The information that I request is retained on your device and is not collected by me in any way
+The app does use third party services that may collect information used to identify you.
+</string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="14" name="Helvetica"/>
+                                            <font key="NSOriginalFont" size="14" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="12" lineHeightMultiple="1.5" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Log Data">
+                                        <attributes>
+                                            <color key="NSColor" red="0.30980392156862746" green="0.50196078431372548" blue="0.74117647058823533" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="16" name="Helvetica"/>
+                                            <font key="NSOriginalFont" size="16" name="Helvetica-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="12" lineHeightMultiple="1.5" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+I want to inform you that whenever you use my Service, in a case of an error in the app I collect data and information (through third party products) on your phone called Log Data. This Log Data may include information such as your device Internet Protocol (“IP”) address, device name, operating system version, the configuration of the app when utilizing my Service, the time and date of your use of the Service, and other statistics.
+</string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="14" name="Helvetica"/>
+                                            <font key="NSOriginalFont" size="14" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="12" lineHeightMultiple="1.5" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Cookies">
+                                        <attributes>
+                                            <color key="NSColor" red="0.30980392156862746" green="0.50196078431372548" blue="0.74117647058823533" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="16" name="Helvetica"/>
+                                            <font key="NSOriginalFont" size="16" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="12" lineHeightMultiple="1.5" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+Cookies are files with small amount of data that is commonly used an anonymous unique identifier. These are sent to your browser from the website that you visit and are stored on your device internal memory.
+This Service does not use these “cookies” explicitly. However, the app may use third party code and libraries that use “cookies” to collection information and to improve their services. You have the option to either accept or refuse these cookies and know when a cookie is being sent to your device. If you choose to refuse our cookies, you may not be able to use some portions of this Service.
+</string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="14" name="Helvetica"/>
+                                            <font key="NSOriginalFont" size="14" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="12" lineHeightMultiple="1.5" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Service Providers">
+                                        <attributes>
+                                            <color key="NSColor" red="0.30980392156862746" green="0.50196078431372548" blue="0.74117647058823533" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="16" name="Helvetica"/>
+                                            <font key="NSOriginalFont" size="16" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="12" lineHeightMultiple="1.5" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+I may employ third-party companies and individuals due to the following reasons:
+</string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="14" name="Helvetica"/>
+                                            <font key="NSOriginalFont" size="14" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="12" lineHeightMultiple="1.5" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">To facilitate our Service;
+To provide the Service on our behalf;
+To perform Service-related services; or
+To assist us in analyzing how our Service is used.
+</string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="14" name="Helvetica"/>
+                                            <font key="NSOriginalFont" size="14" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="5" paragraphSpacingBefore="5" firstLineHeadIndent="18" headIndent="36" lineHeightMultiple="1.5" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops>
+                                                    <textTab alignment="left" location="36">
+                                                        <options/>
+                                                    </textTab>
+                                                </tabStops>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">I want to inform users of this Service that these third parties have access to your Personal Information. The reason is to perform the tasks assigned to them on our behalf. However, they are obligated not to disclose or use the information for any other purpose.
+</string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="14" name="Helvetica"/>
+                                            <font key="NSOriginalFont" size="14" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="12" lineHeightMultiple="1.5" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Security">
+                                        <attributes>
+                                            <color key="NSColor" red="0.30980392156862746" green="0.50196078431372548" blue="0.74117647058823533" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="16" name="Helvetica"/>
+                                            <font key="NSOriginalFont" size="16" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="12" lineHeightMultiple="1.5" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+I value your trust in providing us your Personal Information, thus we are striving to use commercially acceptable means of protecting it. But remember that no method of transmission over the internet, or method of electronic storage is 100% secure and reliable, and I cannot guarantee its absolute security.
+</string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="14" name="Helvetica"/>
+                                            <font key="NSOriginalFont" size="14" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="12" lineHeightMultiple="1.5" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Links to Other Sites">
+                                        <attributes>
+                                            <color key="NSColor" red="0.30980392156862746" green="0.50196078431372548" blue="0.74117647058823533" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="16" name="Helvetica"/>
+                                            <font key="NSOriginalFont" size="16" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="12" lineHeightMultiple="1.5" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+This Service may contain links to other sites. If you click on a third-party link, you will be directed to that site. Note that these external sites are not operated by me. Therefore, I strongly advise you to review the Privacy Policy of these websites. I have no control over and assume no responsibility for the content, privacy policies, or practices of any third-party sites or services.
+</string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="14" name="Helvetica"/>
+                                            <font key="NSOriginalFont" size="14" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="12" lineHeightMultiple="1.5" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Children’s Privacy">
+                                        <attributes>
+                                            <color key="NSColor" red="0.30980392156862746" green="0.50196078431372548" blue="0.74117647058823533" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="16" name="Helvetica"/>
+                                            <font key="NSOriginalFont" size="16" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="12" lineHeightMultiple="1.5" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+These Services do not address anyone under the age of 13. I do not knowingly collect personally identifiable information from children under 13. In the case I discover that a child under 13 has provided me with personal information, I immediately delete this from our servers. If you are a parent or guardian and you are aware that your child has provided us with personal information, please contact me so that I will be able to do necessary actions.
+</string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="14" name="Helvetica"/>
+                                            <font key="NSOriginalFont" size="14" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="12" lineHeightMultiple="1.5" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Changes to This Privacy Policy">
+                                        <attributes>
+                                            <color key="NSColor" red="0.30980392156862746" green="0.50196078431372548" blue="0.74117647058823533" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="16" name="Helvetica"/>
+                                            <font key="NSOriginalFont" size="16" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="12" lineHeightMultiple="1.5" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+I may update our Privacy Policy from time to time. Thus, you are advised to review this page periodically for any changes. I will notify you of any changes by posting the new Privacy Policy on this page. These changes are effective immediately after they are posted on this page.
+</string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="14" name="Helvetica"/>
+                                            <font key="NSOriginalFont" size="14" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="12" lineHeightMultiple="1.5" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Contact Us">
+                                        <attributes>
+                                            <color key="NSColor" red="0.30980392156862746" green="0.50196078431372548" blue="0.74117647058823533" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="16" name="Helvetica"/>
+                                            <font key="NSOriginalFont" size="16" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="12" lineHeightMultiple="1.5" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+If you have any questions or suggestions about my Privacy Policy, do not hesitate to contact me at joseph@sales-linked.com
+This privacy policy page was created at </string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="14" name="Helvetica"/>
+                                            <font key="NSOriginalFont" size="14" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="12" lineHeightMultiple="1.5" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="privacypolicytemplate.net">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="14" name="Helvetica"/>
+                                            <url key="NSLink" string="https://privacypolicytemplate.net/"/>
+                                            <font key="NSOriginalFont" size="14" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="12" lineHeightMultiple="1.5" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                            <integer key="NSUnderline" value="1"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" and modified/generated by ">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="14" name="Helvetica"/>
+                                            <font key="NSOriginalFont" size="14" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="12" lineHeightMultiple="1.5" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="App Privacy Policy Generator">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="14" name="Helvetica"/>
+                                            <url key="NSLink" string="https://app-privacy-policy-generator.firebaseapp.com/"/>
+                                            <font key="NSOriginalFont" size="14" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="12" lineHeightMultiple="1.5" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                            <integer key="NSUnderline" value="1"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="14" name="Helvetica"/>
+                                            <font key="NSOriginalFont" size="14" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="12" lineHeightMultiple="1.5" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="dXl-m5-6qS" secondAttribute="bottom" constant="15" id="6ub-Pm-eTs"/>
+                            <constraint firstItem="dXl-m5-6qS" firstAttribute="top" secondItem="7SM-kD-S50" secondAttribute="top" constant="15" id="j4n-BG-NXf"/>
+                            <constraint firstAttribute="trailing" secondItem="dXl-m5-6qS" secondAttribute="trailing" constant="15" id="jzb-Ge-1cF"/>
+                            <constraint firstItem="dXl-m5-6qS" firstAttribute="leading" secondItem="7SM-kD-S50" secondAttribute="leading" constant="15" id="xVV-oe-5g4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="policyTextPlain" destination="dXl-m5-6qS" id="ihk-no-EfD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u59-HO-gYb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4015" y="610"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="A93-1b-u61">
+            <objects>
+                <navigationController id="HDN-pa-KF1" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="ic_profile_nv" selectedImage="ic_profile_nv" id="mAj-6F-ncn">
+                        <color key="badgeColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rHp-zn-hng">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Yy3-WD-dba" kind="relationship" relationship="rootViewController" id="K1c-e5-rCl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aHe-rE-jxt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2254" y="1558"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="gx5-B8-acS">
+            <objects>
+                <viewController id="Yy3-WD-dba" customClass="ComingSoonViewController" customModule="SalesLinked" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Yvt-Rt-zyb"/>
+                        <viewControllerLayoutGuide type="bottom" id="giW-12-UzB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NhA-F0-8Bi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coming Soon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W6K-XV-YmE">
+                                <rect key="frame" x="95" y="315.5" width="185" height="36"/>
+                                <fontDescription key="fontDescription" name="Aileron-Regular" family="Aileron" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="W6K-XV-YmE" firstAttribute="centerX" secondItem="NhA-F0-8Bi" secondAttribute="centerX" id="Ejg-Qj-NTz"/>
+                            <constraint firstItem="W6K-XV-YmE" firstAttribute="centerY" secondItem="NhA-F0-8Bi" secondAttribute="centerY" id="tiZ-HP-ahC"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" selectedImage="ic_profile" id="IVa-31-9U9"/>
+                    <navigationItem key="navigationItem" id="Hu1-aF-EwM"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vOF-8X-7Zc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3110" y="1558"/>
+        </scene>
+        <!--Delete Contacts-->
+        <scene sceneID="C0d-sR-mPe">
+            <objects>
+                <viewController id="VaS-Z0-AKH" customClass="DeleteContactsViewController" customModule="SalesLinked" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ffs-vi-ahV"/>
+                        <viewControllerLayoutGuide type="bottom" id="Pea-WT-Aam"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2so-jg-OQY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="g7L-0r-gmH">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="uva-nn-ma3" customClass="HomeVCLayout" customModule="SalesLinked" customModuleProvider="target">
+                                    <size key="itemSize" width="119" height="119"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="5" minY="5" maxX="5" maxY="5"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DeleteCell" id="9l0-2U-nJ1" customClass="DeleteCell" customModule="SalesLinked" customModuleProvider="target">
+                                        <rect key="frame" x="5" y="5" width="119" height="119"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="119" height="119"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" semanticContentAttribute="playback" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fdZ-kT-5Yd">
+                                                    <rect key="frame" x="0.0" y="0.0" width="119" height="119"/>
+                                                </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GRm-8m-chJ">
+                                                    <rect key="frame" x="71" y="4" width="44" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="44" id="OQF-rp-FuD"/>
+                                                        <constraint firstAttribute="height" constant="44" id="UuP-qg-Ncb"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button" image="check_box_unselected"/>
+                                                    <state key="selected" image="check_box_selected"/>
+                                                    <connections>
+                                                        <action selector="selectImage:" destination="9l0-2U-nJ1" eventType="touchUpInside" id="MUw-bg-Bv4"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="fdZ-kT-5Yd" secondAttribute="trailing" id="1Ul-4C-6L7"/>
+                                            <constraint firstItem="fdZ-kT-5Yd" firstAttribute="leading" secondItem="9l0-2U-nJ1" secondAttribute="leading" id="20P-kA-d3w"/>
+                                            <constraint firstItem="fdZ-kT-5Yd" firstAttribute="top" secondItem="9l0-2U-nJ1" secondAttribute="top" id="GjX-Ob-AUA"/>
+                                            <constraint firstAttribute="trailing" secondItem="GRm-8m-chJ" secondAttribute="trailing" constant="4" id="Xae-q0-pYG"/>
+                                            <constraint firstAttribute="bottom" secondItem="fdZ-kT-5Yd" secondAttribute="bottom" id="kIx-gw-5Dn"/>
+                                            <constraint firstItem="GRm-8m-chJ" firstAttribute="top" secondItem="9l0-2U-nJ1" secondAttribute="top" constant="4" id="znf-R1-fQN"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="deleteImage" destination="fdZ-kT-5Yd" id="gHm-cP-PFd"/>
+                                            <outlet property="pickButton" destination="GRm-8m-chJ" id="EWz-dW-hNO"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="g7L-0r-gmH" firstAttribute="top" secondItem="2so-jg-OQY" secondAttribute="top" id="EmE-Bj-ow4"/>
+                            <constraint firstItem="g7L-0r-gmH" firstAttribute="leading" secondItem="2so-jg-OQY" secondAttribute="leading" id="aL4-py-4zH"/>
+                            <constraint firstAttribute="trailing" secondItem="g7L-0r-gmH" secondAttribute="trailing" id="jy0-pK-Yqw"/>
+                            <constraint firstItem="Pea-WT-Aam" firstAttribute="top" secondItem="g7L-0r-gmH" secondAttribute="bottom" id="rPb-et-lkm"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Delete Contacts" id="ZQ9-eS-bNz"/>
+                    <connections>
+                        <outlet property="collectionView" destination="g7L-0r-gmH" id="paB-gb-JnK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a5t-h7-zbF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2622" y="2590"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8c5-oR-tQE">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aE2-cF-ZPj" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="ic_home_nv" selectedImage="ic_home_nv" id="3Zd-0H-fja">
+                        <inset key="imageInsets" minX="0.0" minY="4" maxX="0.0" maxY="-4"/>
+                        <color key="badgeColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="oSg-qB-AaP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.40351307390000002" green="0.40011233089999998" blue="0.38306465740000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.40351307390000002" green="0.40011233089999998" blue="0.38306465740000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.96424573659896851" green="0.96092742681503296" blue="0.94380420446395874" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.40351307390000002" green="0.40011233089999998" blue="0.38306465740000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="textShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="tG6-Hw-oCb" kind="relationship" relationship="rootViewController" id="RqU-ew-5rn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bTQ-Ua-i2y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1326" y="-246"/>
+        </scene>
+        <!--Root Tab BarVC-->
+        <scene sceneID="q5m-tG-Eb9">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="uvf-s7-6lg" customClass="RootTabBarVC" customModule="SalesLinked" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="dvE-NG-7oX">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.39965301752090454" green="0.396170973777771" blue="0.38336455821990967" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="aE2-cF-ZPj" kind="relationship" relationship="viewControllers" id="DG0-uG-mc9"/>
+                        <segue destination="MyR-sj-7iS" kind="relationship" relationship="viewControllers" id="BqD-XM-IaF"/>
+                        <segue destination="HDN-pa-KF1" kind="relationship" relationship="viewControllers" id="JeS-ze-QcA"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0lb-hZ-15Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="114" y="1558"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="3fR-zz-jIH">
+            <objects>
+                <viewController id="pHM-GW-SW3" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TR5-KN-3O1"/>
+                        <viewControllerLayoutGuide type="bottom" id="Q98-1l-gIX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OBx-aC-6Tk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="ic_search_icon_deactive" selectedImage="ic_search_icon__active" id="oGx-Mr-fdh">
+                        <inset key="imageInsets" minX="0.0" minY="4" maxX="0.0" maxY="-4"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g58-2k-DQK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1326" y="414"/>
+        </scene>
+        <!-- -->
+        <scene sceneID="XVx-sR-mPK">
+            <objects>
+                <viewController id="MyR-sj-7iS" customClass="TakePhotoVC" customModule="SalesLinked" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mTg-AT-Y3V"/>
+                        <viewControllerLayoutGuide type="bottom" id="bcP-5n-65E"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Flw-4x-6LQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" tag="1" title=" " image="ic_camera_nv" selectedImage="ic_camera_nv" id="uDW-VF-tI8">
+                        <inset key="imageInsets" minX="0.0" minY="4" maxX="0.0" maxY="-4"/>
+                        <color key="badgeColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </tabBarItem>
+                    <connections>
+                        <segue destination="mVV-up-ZyD" kind="unwind" identifier="HomeSegue" unwindAction="unwindToMenuWithSegue:" id="PKM-85-EYd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eGe-r3-c3S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="mVV-up-ZyD" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1326" y="1088"/>
+        </scene>
+        <!-- -->
+        <scene sceneID="NfA-Uu-sRD">
+            <objects>
+                <viewController id="WAR-HG-OwT" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ece-ll-nT5"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ah5-yi-e87"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="miq-df-h3Q">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title=" " image="ic_favorites_" selectedImage="ic_favorites_active" id="kre-Wj-LTP">
+                        <inset key="imageInsets" minX="0.0" minY="4" maxX="0.0" maxY="-4"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xXD-Ha-imT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1326" y="1751"/>
+        </scene>
+        <!-- -->
+        <scene sceneID="buh-dr-thB">
+            <objects>
+                <viewController id="MVI-Je-sOM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1wm-vk-NiI"/>
+                        <viewControllerLayoutGuide type="bottom" id="1jK-bU-Mkc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nPX-vi-uCW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title=" " image="ic_profile_nv" selectedImage="ic_profile_nv" id="Dau-yR-ZGT">
+                        <inset key="imageInsets" minX="0.0" minY="4" maxX="0.0" maxY="-4"/>
+                        <color key="badgeColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tgj-ma-WjZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1326" y="2483"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="bkw-do-zLm"/>
+        <segue reference="Q0d-MZ-ipv"/>
+    </inferredMetricsTieBreakers>
+    <resources>
+        <image name="check_box_selected" width="44" height="44"/>
+        <image name="check_box_unselected" width="44" height="44"/>
+        <image name="ic-arrow" width="14" height="14.5"/>
+        <image name="ic_camera_nv" width="28" height="28"/>
+        <image name="ic_export" width="21" height="21.5"/>
+        <image name="ic_favorites_" width="24.5" height="24.5"/>
+        <image name="ic_favorites_active" width="24.5" height="24.5"/>
+        <image name="ic_home_nv" width="26.5" height="23"/>
+        <image name="ic_profile" width="27.5" height="27.5"/>
+        <image name="ic_profile_nv" width="26.5" height="22.5"/>
+        <image name="ic_search_icon__active" width="24.5" height="24.5"/>
+        <image name="ic_search_icon_deactive" width="24.5" height="24.5"/>
+        <image name="ic_settings" width="24" height="24.5"/>
+        <image name="ic_sign_out" width="27.5" height="27.5"/>
+        <image name="ic_star" width="24.5" height="24.5"/>
+    </resources>
+</document>

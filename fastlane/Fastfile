@@ -1,0 +1,129 @@
+# Customize this file, documentation can be found here:
+# https://docs.fastlane.tools/actions/
+# All available actions: https://docs.fastlane.tools/actions
+# can also be listed using the `fastlane actions` command
+
+# Change the syntax highlighting to Ruby
+# All lines starting with a # are ignored when running `fastlane`
+
+# If you want to automatically update fastlane if a new version is available:
+# update_fastlane
+
+# This is the minimum version number required.
+# Update this, if you use features of a newer version
+min_fastlane_version("2.73.0")
+
+default_platform(:ios)
+
+platform :ios do
+  before_all do
+    ENV["SLACK_URL"] = "https://hooks.slack.com/services/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"
+    cocoapods(repo_update: true)
+    # cocoapods
+  end
+
+  desc "Runs all the tests"
+  lane :test do
+    run_tests
+  end
+
+  desc "Submit a new Alpha Build to Crashlytics"
+  lane :alpha do
+
+    match(
+      git_url: ENV["MATCH_GIT_URL"],
+      git_branch: ENV["MATCH_GIT_BRANCH"],
+      type: "adhoc",
+      app_identifier: [ENV["APP_IDENTIFIER"], ENV["APP_SHARE_EXT_IDENTIFIER"]],
+      readonly: true
+      ) # more information: https://codesigning.guide
+
+    clear_derived_data
+    
+    build_app(scheme: ENV['SCHEME_NAME']) # more options available
+
+    changelog_from_git_commits(
+      pretty: "- (%ae) %s",# Optional, lets you provide a custom format to apply to each commit when generating the changelog text
+      date_format: "short",# Optional, lets you provide an additional date format to dates within the pretty-formatted string
+      merge_commit_filtering: "exclude_merges" # Optional, lets you filter out merge commits
+    )
+
+    crashlytics(
+      api_token: "1bbbe05b736d391fb8a1c1789418acc15231e163",
+      build_secret: "636fe78d3bbcad75835067c05c6aa54976870422e3eac8a3a88ade2852a0af36",
+      groups: "qa-mobile,mobile-managment"
+    )
+
+  end
+
+  desc "Submit a new Beta Build to Apple TestFlight"
+  desc "This will also make sure the profile is up to date"
+  lane :beta do
+
+    match(
+      git_url: ENV["MATCH_GIT_URL"],
+      git_branch: ENV["MATCH_GIT_BRANCH"],
+      type: "appstore",
+      app_identifier: [ENV["APP_IDENTIFIER"], ENV["APP_SHARE_EXT_IDENTIFIER"]],
+      readonly: true
+      ) # more information: https://codesigning.guide
+
+    clear_derived_data
+
+    build_app(scheme: ENV['SCHEME_NAME']) # more options available
+
+    notes = changelog_from_git_commits(
+      pretty: "- (%ae) %s",# Optional, lets you provide a custom format to apply to each commit when generating the changelog text
+      date_format: "short",# Optional, lets you provide an additional date format to dates within the pretty-formatted string
+      merge_commit_filtering: "exclude_merges" # Optional, lets you filter out merge commits
+    )
+
+    upload_to_testflight(changelog: notes)
+
+  end
+
+  desc "Deploy a new version to the App Store"
+  lane :release do
+    match(
+      git_url: ENV["MATCH_GIT_URL"],
+      git_branch: ENV["MATCH_GIT_BRANCH"],
+      type: "appstore",
+      app_identifier: [ENV["APP_IDENTIFIER"], ENV["APP_SHARE_EXT_IDENTIFIER"]],
+      readonly: true
+      ) # more information: https://codesigning.guide
+
+    clear_derived_data
+
+    build_app(scheme: ENV['SCHEME_NAME']) # more options available
+    
+    deliver(
+      force: true,
+      submit_for_review: true
+    )
+    # frame_screenshots
+  end
+
+  # You can define as many lanes as you want
+
+  after_all do |lane|
+    # This block is called, only if the executed lane was successful
+
+    slack(
+      message: "Successfully deployed new " + ENV['SCHEME_NAME'] + " App Update."
+    )
+  end
+
+  error do |lane, exception|
+    slack(
+      message: exception.message,
+      success: false
+    )
+  end
+end
+
+
+# More information about multiple platforms in fastlane: https://docs.fastlane.tools/advanced/#control-configuration-by-lane-and-by-platform
+# All available actions: https://docs.fastlane.tools/actions
+
+# fastlane reports which actions are used. No personal data is recorded.
+# Learn more at https://docs.fastlane.tools/#metrics

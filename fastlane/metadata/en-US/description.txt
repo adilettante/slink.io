@@ -1,0 +1,1 @@
+Sales-Linked is a business card organizing and contact management app allowing the seamless cloud storage of snapped business cards and CRM export of captured contact data.
