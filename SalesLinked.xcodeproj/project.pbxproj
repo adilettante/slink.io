@@ -45,9 +45,7 @@
 		278136DD1F1E3A30004184C4 /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278136DC1F1E3A30004184C4 /* Data+Extension.swift */; };
 		278136DE1F1E3A34004184C4 /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278136DC1F1E3A30004184C4 /* Data+Extension.swift */; };
 		278DB4661EFD0C84006EC926 /* RootTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278DB4651EFD0C84006EC926 /* RootTabBarVC.swift */; };
-		279162281EF12A2700DAFD24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 276C443F1EDEF4C200DB0218 /* Assets.xcassets */; };
 		279162291EF12A9E00DAFD24 /* Assets.xcassets in Sources */ = {isa = PBXBuildFile; fileRef = 276C443F1EDEF4C200DB0218 /* Assets.xcassets */; };
-		279642681EE12BC00003BBD5 /* SalesLinkedShareExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2796425E1EE12BC00003BBD5 /* SalesLinkedShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		279642731EE1451F0003BBD5 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279642721EE1451F0003BBD5 /* HomeCell.swift */; };
 		279642751EE14F4C0003BBD5 /* BusinessCardInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279642741EE14F4C0003BBD5 /* BusinessCardInfo.swift */; };
 		2796427B1EE18BF90003BBD5 /* HomeVCLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2796427A1EE18BF90003BBD5 /* HomeVCLayout.swift */; };
@@ -55,7 +53,6 @@
 		27B2A97C1EF15C3F00D38560 /* GlobalConsts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B2A97B1EF15C3F00D38560 /* GlobalConsts.swift */; };
 		27B2A97D1EF15C3F00D38560 /* GlobalConsts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B2A97B1EF15C3F00D38560 /* GlobalConsts.swift */; };
 		27B2A9AF1EF193D400D38560 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27B2A9A91EF193D400D38560 /* MainInterface.storyboard */; };
-		27B2A9B01EF193D400D38560 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 27B2A9AB1EF193D400D38560 /* Info.plist */; };
 		27B2A9B11EF193D400D38560 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B2A9AD1EF193D400D38560 /* ShareViewController.swift */; };
 		5700504A1F83C98D00C889E0 /* UIScrollView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570050491F83C98D00C889E0 /* UIScrollView+Extensions.swift */; };
 		57052DE11FC59B050068B491 /* linkedin-sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57052DE01FC59AF10068B491 /* linkedin-sdk.framework */; };
@@ -144,7 +141,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				279642681EE12BC00003BBD5 /* SalesLinkedShareExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -748,6 +744,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -779,7 +776,6 @@
 				277AD6421F00EF3E00907CB1 /* Lato-BoldItalic.ttf in Resources */,
 				2769AC641F3B1ECD0037919A /* BusinessCardImport.storyboard in Resources */,
 				276C44401EDEF4C200DB0218 /* Assets.xcassets in Resources */,
-				27B2A9B01EF193D400D38560 /* Info.plist in Resources */,
 				277AD6481F00EF3E00907CB1 /* Lato-Regular.ttf in Resources */,
 				277AD6441F00EF3E00907CB1 /* Lato-HairlineItalic.ttf in Resources */,
 				277AD6431F00EF3E00907CB1 /* Lato-Hairline.ttf in Resources */,
@@ -806,7 +802,6 @@
 				277AD6501F00EFAC00907CB1 /* Lato-Light.ttf in Resources */,
 				277AD6511F00EFAC00907CB1 /* Lato-LightItalic.ttf in Resources */,
 				277AD6521F00EFAC00907CB1 /* Lato-Regular.ttf in Resources */,
-				279162281EF12A2700DAFD24 /* Assets.xcassets in Resources */,
 				277AA6231EF261E900EA505C /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -826,7 +821,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 		353047F206DDE0084372887D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -858,7 +853,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ \"${CONFIGURATION}\" = \"DebugDev\" ] || [ \"${CONFIGURATION}\" = \"ReleaseDev\" ]; then\ncp ${SRCROOT}/SalesLinked/Config/Config_dev.swift ${SRCROOT}/SalesLinked/Config/Config.swift\nsed -i '' -e 's/^struct.*/struct Config {/' ${SRCROOT}/SalesLinked/Config/Config.swift\nelif [ \"${CONFIGURATION}\" = \"DebugAlpha\" ] || [ \"${CONFIGURATION}\" = \"ReleaseAlpha\" ]; then\ncp ${SRCROOT}/SalesLinked/Config/Config_alpha.swift ${SRCROOT}/SalesLinked/Config/Config.swift\nsed -i '' -e 's/^struct.*/struct Config {/' ${SRCROOT}/SalesLinked/Config/Config.swift\nelse\ncp ${SRCROOT}/SalesLinked/Config/Config_live.swift ${SRCROOT}/SalesLinked/Config/Config.swift\nsed -i '' -e 's/^struct.*/struct Config {/' ${SRCROOT}/SalesLinked/Config/Config.swift\nfi";
+			shellScript = "if [ \"${CONFIGURATION}\" = \"DebugDev\" ] || [ \"${CONFIGURATION}\" = \"ReleaseDev\" ]; then\ncp ${SRCROOT}/SalesLinked/Config/Config_dev.swift ${SRCROOT}/SalesLinked/Config/Config.swift\nsed -i '' -e 's/^struct.*/struct Config {/' ${SRCROOT}/SalesLinked/Config/Config.swift\nelif [ \"${CONFIGURATION}\" = \"DebugAlpha\" ] || [ \"${CONFIGURATION}\" = \"ReleaseAlpha\" ]; then\ncp ${SRCROOT}/SalesLinked/Config/Config_alpha.swift ${SRCROOT}/SalesLinked/Config/Config.swift\nsed -i '' -e 's/^struct.*/struct Config {/' ${SRCROOT}/SalesLinked/Config/Config.swift\nelse\ncp ${SRCROOT}/SalesLinked/Config/Config_live.swift ${SRCROOT}/SalesLinked/Config/Config.swift\nsed -i '' -e 's/^struct.*/struct Config {/' ${SRCROOT}/SalesLinked/Config/Config.swift\nfi\n";
 		};
 		57CA63531FC41B49007A4440 /* Fabric */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -872,7 +867,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\" 1bbbe05b736d391fb8a1c1789418acc15231e163 2c6a8b5646d4ccbce66b14f718d642b0537abc4bcdae6b309251cd0b73361e73";
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 1bbbe05b736d391fb8a1c1789418acc15231e163 2c6a8b5646d4ccbce66b14f718d642b0537abc4bcdae6b309251cd0b73361e73\n";
 		};
 		7E0A907D22F50767E37A8F09 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;

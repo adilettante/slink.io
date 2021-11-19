@@ -29,11 +29,13 @@ target 'SalesLinked' do
     pod 'Alamofire', '~> 4.5'
     pod 'AlamofireImage', '~> 3.1'
     pod 'AlamofireNetworkActivityIndicator', '~> 2.0'
-    pod 'ObjectMapper', '~> 3.0'
+#    pod 'ObjectMapper', '~> 3.0'
+    pod 'ObjectMapper', '~> 3.3.0'
     pod 'SDWebImage', '~> 4.0'
 
     # DB pods
-    pod 'RealmSwift',  '~> 3.1.1'
+#    pod 'RealmSwift',  '~> 3.1.1'
+    pod 'RealmSwift', '~> 3.20.0'
     pod 'RxRealm', '~> 0.7.4'
 end
 
@@ -51,7 +53,8 @@ target 'SalesLinkedShareExtension' do
   pod 'SDWebImage', '~> 4.0'
 
   # DB pods
-  pod 'RealmSwift',  '~> 3.1.1'
+#  pod 'RealmSwift',  '~> 3.1.1'
+  pod 'RealmSwift', '~> 3.20.0'
   pod 'RxRealm', '~> 0.7.4'
 
 
