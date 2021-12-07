@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Fabric.with([Crashlytics.self])
         NetworkActivityIndicatorManager.shared.isEnabled = true
 		navBarBackButtonConfig()
-		IQKeyboardManager.sharedManager().enable = true
+		IQKeyboardManager.shared.enable = true
         SDWebImageManager.shared().cacheKeyFilter = { url in
             return url?.path
         }

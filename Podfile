@@ -7,7 +7,7 @@ target 'SalesLinked' do
 	pod 'Pageboy'
 	pod 'IQKeyboardManagerSwift'
 	pod 'KMPlaceholderTextView', '~> 1.3.0'
-    pod 'NVActivityIndicatorView'
+    pod 'NVActivityIndicatorView/Extended'
     pod 'SwiftHEXColors', :git => 'https://github.com/thii/SwiftHEXColors.git'
     pod 'NohanaImagePicker', '~> 0.9.0'
     pod 'Whisper'
